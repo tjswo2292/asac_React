@@ -1,8 +1,8 @@
 import React from "react";
 
-import HeadeBar from "../molecules/HeaderBar";
-import HeaderMenu from "../molecules/HeaderMenu";
-import HeaderAside from "../molecules/HeaderAside";
+import HeadeBar from "../molecules/header/HeaderBar";
+import HeaderMenu from "../molecules/header/HeaderMenu";
+import HeaderAside from "../molecules/header/HeaderAside";
 
 import "./header.css";
 

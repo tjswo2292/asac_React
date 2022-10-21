@@ -1,0 +1,13 @@
+.img-slide-wrap {
+  display: flex;
+}
+.img-slide-wrap .main-img-slide {
+  display: flex;
+}
+.main-img-slide .img-slide-item {
+  width: 66.25rem;
+  border: 1px solid;
+}
+.main-img-slide .img-slide-item:not(:last-child) {
+  margin-right: 1.563rem;
+}
