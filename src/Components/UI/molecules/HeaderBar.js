@@ -1,13 +1,20 @@
 import React from "react";
 
-import { FiAlignJustify } from "react-icons/fi";
+import { AiOutlineMenu } from "react-icons/ai";
 
-const HeaderMenu = () => {
+import "./headerBar.css";
+
+const HeaderBar = () => {
   return (
-    <div>
-      <FiAlignJustify />
+    <div className="header-bar-container">
+      <button type="click" className="hbg-icon-box">
+        <AiOutlineMenu />
+      </button>
+      <div className="logo-img-box">
+        <img src={process.env.PUBLIC_URL + "/assets/wantedLogo.png"} />
+      </div>
     </div>
   );
 };
 
-export default HeaderMenu;
+export default HeaderBar;

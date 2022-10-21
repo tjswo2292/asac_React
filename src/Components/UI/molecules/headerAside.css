@@ -1,0 +1,38 @@
+.header-aside-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header-aside-container .aside-item:nth-child(3) {
+  margin-right: 2.6rem;
+}
+.header-aside-container .aside-item .aside-box {
+  display: flex;
+  align-items: center;
+  margin: 0 0.625rem;
+  font-size: 1.125rem;
+}
+.header-aside-container .aside-item .aside-box .profile-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  border: 1px solid #e1e2e3;
+}
+.header-aside-container .aside-item .aside-box .profile-img img {
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 50%;
+}
+.header-aside-container .aside-item:nth-child(4) {
+  border: 1px solid #e1e2e3;
+  border-radius: 0.938rem;
+}
+.header-aside-container .aside-item span {
+  display: block;
+  padding: 0.5rem 0.625rem;
+  font-size: 0.813rem;
+  color: #666;
+}
