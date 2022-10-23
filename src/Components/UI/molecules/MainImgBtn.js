@@ -2,13 +2,13 @@ import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 
 import "./mainImgBtn.css";
 
-const MainImgBtn = () => {
+const MainImgBtn = ({ nextBtn, prevBtn }) => {
   return (
     <>
-      <button className="img-btn-left">
+      <button type="click" className="img-btn-left" onClick={prevBtn}>
         <AiOutlineLeft />
       </button>
-      <button className="img-btn-rigth">
+      <button type="click" className="img-btn-rigth" onClick={nextBtn}>
         <AiOutlineRight />
       </button>
     </>
