@@ -10,3 +10,7 @@
   width: 5rem;
   height: 1.25rem;
 }
+.header-bar-container .logo-img-box img {
+  width: 100%;
+  height: 100%;
+}

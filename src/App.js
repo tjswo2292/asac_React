@@ -21,8 +21,6 @@ const GlobalStyle = createGlobalStyle`
   }
   img {
     display: inline-block;
-    width: 100%;
-    height: 100%;
   }
   a {
     text-decoration: none;
