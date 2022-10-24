@@ -1,8 +1,8 @@
 import "./App.css";
+import { Route, Routes } from "react-router-dom";
 import reset from "styled-reset";
 import { createGlobalStyle } from "styled-components";
 import MainPage from "./Components/pages/MainPage";
-
 const GlobalStyle = createGlobalStyle`
   ${reset}
   * {
@@ -32,7 +32,9 @@ function App() {
   return (
     <div className="App">
       <GlobalStyle />
-      <MainPage />
+      <Routes>
+        <Route exact path="/" element={<MainPage />} />
+      </Routes>
     </div>
   );
 }

@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 
 import "./mainImgBtn.css";
