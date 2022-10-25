@@ -11,6 +11,7 @@
   margin-top: 2.5rem;
 }
 .insight-list-container .insight-list-item-container {
+  margin-bottom: 3.125rem;
   width: var(--card-width);
 }
 .insight-list-container .insight-list-item-container .card-img-box {
