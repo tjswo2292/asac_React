@@ -1,9 +1,7 @@
 import "./insightList.css";
 
 const InsightList = () => {
-  return (
-    
-  )
+  return <ul className="insight-list-container">{}</ul>;
 };
 
 export default InsightList;
