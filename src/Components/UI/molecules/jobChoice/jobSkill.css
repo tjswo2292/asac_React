@@ -1,0 +1,63 @@
+.job-skill-wrap {
+  margin-top: 2.5rem;
+  margin-bottom: 1.563rem;
+  border-bottom: 1px solid #e1e2e3;
+}
+.job-skill-wrap .skill-choice-container {
+  display: flex;
+  justify-content: space-between;
+}
+.job-skill-wrap .skill-choice-container .skill-btn {
+  display: flex;
+}
+.job-skill-wrap .skill-choice-container .skill-btn .location-btn-box {
+  display: flex;
+  align-items: center;
+  border: 1px solid #e1e2e3;
+  border-radius: 0.313rem;
+}
+.job-skill-wrap .skill-choice-container .skill-btn .location-btn-box button {
+  margin: 0 0.938rem;
+}
+.job-skill-wrap
+  .skill-choice-container
+  .skill-btn
+  .location-btn-box
+  button
+  span {
+  font-size: 0.875rem;
+}
+.job-skill-wrap
+  .skill-choice-container
+  .skill-btn
+  .location-btn-box
+  button
+  span:first-child {
+  margin-right: 0.938rem;
+}
+.job-skill-wrap
+  .skill-choice-container
+  .skill-btn
+  .location-btn-box
+  button
+  span:last-child {
+  font-weight: bold;
+  color: #36f;
+}
+.job-skill-wrap .skill-choice-container .skill-btn .career-btn-box button {
+  display: flex;
+}
+.job-skill-wrap
+  .skill-choice-container
+  .skill-btn
+  .career-btn-box
+  .career-choice {
+  display: flex;
+}
+.job-skill-wrap
+  .skill-choice-container
+  .skill-btn
+  .skill-stack-btn-box
+  .skill-stack-box {
+  display: flex;
+}

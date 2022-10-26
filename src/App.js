@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import reset from "styled-reset";
 import { createGlobalStyle } from "styled-components";
 import MainPage from "./Components/pages/MainPage";
+import JobPosting from "./Components/pages/JobPosting";
 const GlobalStyle = createGlobalStyle`
   ${reset}
   * {
@@ -34,6 +35,7 @@ function App() {
       <GlobalStyle />
       <Routes>
         <Route exact path="/" element={<MainPage />} />
+        <Route path="/jobposting" element={<JobPosting />} />
       </Routes>
     </div>
   );

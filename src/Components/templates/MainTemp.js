@@ -6,11 +6,11 @@ import InsightSection from "../UI/organisms/InsightSection";
 
 const MainTemp = () => {
   return (
-    <main className="main-temp">
+    <div className="main-temp">
       <Header />
       <MainImgSection />
       <InsightSection />
-    </main>
+    </div>
   );
 };
 
