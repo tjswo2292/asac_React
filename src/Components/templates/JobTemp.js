@@ -6,7 +6,6 @@ import "./jobTemp.css";
 const JobTemp = () => {
   return (
     <section className="job-choice">
-      <Header />
       <div className="job-box">
         <JobChoiceSection />
       </div>
