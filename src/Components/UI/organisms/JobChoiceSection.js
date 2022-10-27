@@ -8,8 +8,8 @@ const JobChoiceSection = () => {
   return (
     <section className="job-choice-section">
       <JobDetail />
-      <JobDetailCategory />
       <JobSkill />
+      <JobDetailCategory />
     </section>
   );
 };
