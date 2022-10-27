@@ -18,8 +18,8 @@ const JobSkill = () => {
               <span>경력</span>
               <div className="career-choice">
                 <span>신입</span>
-                <div>
-                  <AiOutlineCaretDown />
+                <div className="down-icon-box">
+                  <AiOutlineCaretDown className="down-icon" />
                 </div>
               </div>
             </button>
@@ -27,16 +27,16 @@ const JobSkill = () => {
           <div className="skill-stack-btn-box">
             <button className="skill-stack-box">
               <span>기술스택</span>
-              <div>
-                <AiOutlineCaretDown />
+              <div className="down-icon-box">
+                <AiOutlineCaretDown className="down-icon" />
               </div>
             </button>
           </div>
         </div>
         <div className="answer-btn-box">
           <span>응답률순</span>
-          <div>
-            <AiOutlineCaretDown />
+          <div className="down-icon-box">
+            <AiOutlineCaretDown className="down-icon" />
           </div>
         </div>
       </div>
