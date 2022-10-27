@@ -1,13 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { AiOutlineMenu } from "react-icons/ai";
 
 import "./headerBar.css";
 
-const HeaderBar = () => {
+const HeaderBar = ({ setShowModal }) => {
+  function onMouse() {
+    setShowModal(true);
+  }
   return (
     <div className="header-bar-container">
-      <button type="click" className="hbg-icon-box">
+      <button onMouseOver={onMouse} type="click" className="hbg-icon-box">
         <AiOutlineMenu />
       </button>
       <div className="logo-img-box">

@@ -1,19 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 
 import HeadeBar from "../molecules/header/HeaderBar";
 import HeaderMenu from "../molecules/header/HeaderMenu";
 import HeaderAside from "../molecules/header/HeaderAside";
+import HbgMenuList from "../molecules/header/HbgMenuList";
 
 import "./header.css";
 
 const Header = () => {
+  const [showModal, setShowModal] = useState(false);
+
   return (
     <div className="header">
       <div className="header-container">
-        <HeadeBar />
+        <HeadeBar setShowModal={setShowModal} />
         <HeaderMenu />
         <HeaderAside />
       </div>
+      {showModal === true ? <HbgMenuList setShowModal={setShowModal} /> : ""}
     </div>
   );
 };
