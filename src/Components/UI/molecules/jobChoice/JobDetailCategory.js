@@ -1,3 +1,5 @@
+import jobCategoryData from "../../../../Data/jobCategoryData.json";
+
 import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 
 import "./jobDetailCategory.css";
@@ -11,7 +13,21 @@ const JobDetailCategory = () => {
         </button>
       </div>
       <ul className="job-category-container">
-        <li className="job-category-item">
+        {jobCategoryData.jobCategory.map((element, index) => (
+          <li className="job-category-item">
+            <button>
+              <span
+                style={{
+                  backgroundColor: `${element.color}`,
+                  borderRadius: "1.563rem",
+                }}
+              >
+                {element.title}
+              </span>
+            </button>
+          </li>
+        ))}
+        {/* <li className="job-category-item">
           <button>
             <span>연봉이 최고의 복지 🎄</span>
           </button>
@@ -55,7 +71,7 @@ const JobDetailCategory = () => {
           <button>
             <span>유연근무 🕚</span>
           </button>
-        </li>
+        </li> */}
       </ul>
       <div className="job-more-container">
         <button>
