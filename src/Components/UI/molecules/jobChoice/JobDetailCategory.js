@@ -14,7 +14,7 @@ const JobDetailCategory = () => {
       </div>
       <ul className="job-category-container">
         {jobCategoryData.jobCategory.map((element, index) => (
-          <li className="job-category-item">
+          <li key={element.id} className="job-category-item">
             <button>
               <span
                 style={{
