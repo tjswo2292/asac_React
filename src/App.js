@@ -1,9 +1,13 @@
-import "./App.css";
 import { Route, Routes } from "react-router-dom";
+
+import "./App.css";
 import reset from "styled-reset";
 import { createGlobalStyle } from "styled-components";
+
 import MainPage from "./Components/pages/MainPage";
 import JobPosting from "./Components/pages/JobPosting";
+import Header from "./Components/UI/organisms/Header";
+
 const GlobalStyle = createGlobalStyle`
   ${reset}
   * {
@@ -33,9 +37,11 @@ function App() {
   return (
     <div className="App">
       <GlobalStyle />
+      <Header />
       <Routes>
         <Route exact path="/" element={<MainPage />} />
         <Route path="/jobposting" element={<JobPosting />} />
+        {/* <Route path="*" element={<NotFound />} /> */}
       </Routes>
     </div>
   );
