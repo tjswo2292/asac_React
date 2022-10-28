@@ -4,6 +4,7 @@ import "./signUpForm.css";
 const SignUpForm = () => {
   const [validate, setValidate] = useState(true);
   const [activeBtn, setActiveBtn] = useState(false);
+
   let regExp =
     /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{1,3}$/i;
 
@@ -36,6 +37,7 @@ const SignUpForm = () => {
       <form>
         <label htmlFor="emailInput">이메일</label>
         <input
+          className={validate ? "" : "red-outline"}
           onChange={showWarningtext}
           id="emailInput"
           type="email"
@@ -48,6 +50,7 @@ const SignUpForm = () => {
           <button
             id={activeBtn ? "loginPosible" : "emailSubmitBtn"}
             type="submit"
+            disabled={!activeBtn}
           >
             <span>이메일로 계속하기</span>
           </button>
