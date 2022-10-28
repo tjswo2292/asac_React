@@ -8,7 +8,7 @@ import { imgContent } from "../../../Data/SlideImgData";
 import "./mainImgSection.css";
 
 const MainImgSection = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState({});
 
   const nextBtn = () => {};
 

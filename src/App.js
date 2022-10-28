@@ -6,6 +6,7 @@ import { createGlobalStyle } from "styled-components";
 
 import MainPage from "./Components/pages/MainPage";
 import JobPosting from "./Components/pages/JobPosting";
+import SignUpPage from "./Components/pages/SignUpPage";
 import Header from "./Components/UI/organisms/Header";
 
 const GlobalStyle = createGlobalStyle`
@@ -41,6 +42,7 @@ function App() {
       <Routes>
         <Route exact path="/" element={<MainPage />} />
         <Route path="/jobposting" element={<JobPosting />} />
+        <Route path="/signup" element={<SignUpPage />} />
         {/* <Route path="*" element={<NotFound />} /> */}
       </Routes>
     </div>
