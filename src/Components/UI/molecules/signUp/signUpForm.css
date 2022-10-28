@@ -46,6 +46,7 @@
   height: 3rem;
   background-color: #f2f4f7;
   border-radius: 1.563rem;
+  cursor: default;
 }
 .sign-up-form form #loginPosible {
   display: block;
@@ -173,4 +174,8 @@
 }
 .sign-up-form .close-warning {
   display: none;
+}
+.red-outline {
+  outline-color: #fe415c;
+  outline-width: 0.1em;
 }
