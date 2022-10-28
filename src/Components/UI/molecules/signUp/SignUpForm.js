@@ -1,6 +1,27 @@
+import { useState } from "react";
 import "./signUpForm.css";
 
 const SignUpForm = () => {
+  const [validate, setValidate] = useState(true);
+  const [activeBtn, setActiveBtn] = useState(false);
+  let regExp =
+    /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{1,3}$/i;
+
+  function showWarningtext(e) {
+    let emailValue = e.target.value;
+
+    if (emailValue == "") {
+      setValidate(true);
+    } else {
+      setValidate(false);
+      if (regExp.test(emailValue)) {
+        setActiveBtn(true);
+        setValidate(true);
+      } else {
+        setActiveBtn(false);
+      }
+    }
+  }
   return (
     <div className="sign-up-form">
       <div className="sign-up-title">
@@ -15,12 +36,19 @@ const SignUpForm = () => {
       <form>
         <label htmlFor="emailInput">이메일</label>
         <input
+          onChange={showWarningtext}
           id="emailInput"
           type="email"
           placeholder="이메일을 입력해주세요."
         />
+        <span className={validate ? "close-warning" : "show-warning"}>
+          올바른 이메일을 입력해주세요
+        </span>
         <div className="sign-up-btn-box">
-          <button id="emailSubmitBtn" type="submit">
+          <button
+            id={activeBtn ? "loginPosible" : "emailSubmitBtn"}
+            type="submit"
+          >
             <span>이메일로 계속하기</span>
           </button>
         </div>
@@ -57,3 +85,5 @@ const SignUpForm = () => {
 };
 
 export default SignUpForm;
+
+// /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/g

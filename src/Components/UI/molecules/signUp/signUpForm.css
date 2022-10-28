@@ -38,7 +38,7 @@
   font-weight: 400;
   color: #e1e2e3;
 }
-.sign-up-form form button {
+.sign-up-form form #emailSubmitBtn {
   display: block;
   margin-top: 1.875rem;
   margin-bottom: 0.625rem;
@@ -46,6 +46,22 @@
   height: 3rem;
   background-color: #f2f4f7;
   border-radius: 1.563rem;
+}
+.sign-up-form form #loginPosible {
+  display: block;
+  margin-top: 1.875rem;
+  margin-bottom: 0.625rem;
+  width: 100%;
+  height: 3rem;
+  background-color: #36f;
+  border-radius: 1.563rem;
+  font-weight: bold;
+  color: #fff;
+}
+.sign-up-form form #emailSubmitBtn span {
+  line-height: 1.5rem;
+  font-weight: 600;
+  color: #ccc;
 }
 .sign-up-form form div::after {
   display: flex;
@@ -55,11 +71,6 @@
   color: #939393;
   margin-top: 5px;
   margin-bottom: 0.938rem;
-}
-.sign-up-form form button span {
-  line-height: 1.5rem;
-  font-weight: 600;
-  color: #ccc;
 }
 .sign-up-form .social-list {
   display: flex;
@@ -150,4 +161,16 @@
 .sign-up-form hr {
   border: 1px solid #e1e2e3;
   margin: 2.5rem 0;
+}
+
+/* show warning */
+.sign-up-form .show-warning {
+  color: #fe415c;
+  font-weight: 400;
+  font-size: 0.813rem;
+  line-height: 1.125rem;
+  margin-bottom: 0.5rem;
+}
+.sign-up-form .close-warning {
+  display: none;
 }
