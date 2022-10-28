@@ -7,6 +7,8 @@ import { createGlobalStyle } from "styled-components";
 import MainPage from "./Components/pages/MainPage";
 import JobPosting from "./Components/pages/JobPosting";
 import SignUpPage from "./Components/pages/SignUpPage";
+import NewSignUpPage from "./Components/pages/NewSignUpPage";
+
 import Header from "./Components/UI/organisms/Header";
 
 const GlobalStyle = createGlobalStyle`
@@ -38,10 +40,12 @@ function App() {
   return (
     <div className="App">
       <GlobalStyle />
-      <Header />
       <Routes>
-        <Route exact path="/" element={<MainPage />} />
-        <Route path="/jobposting" element={<JobPosting />} />
+        <Route path="/" element={<Header />}>
+          <Route exact path="main" element={<MainPage />} />
+          <Route path="jobposting" element={<JobPosting />} />
+        </Route>
+        <Route path="/newsingup" element={<NewSignUpPage />} />
         <Route path="/signup" element={<SignUpPage />} />
         {/* <Route path="*" element={<NotFound />} /> */}
       </Routes>

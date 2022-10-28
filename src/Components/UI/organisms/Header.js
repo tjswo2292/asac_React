@@ -6,6 +6,7 @@ import HeaderAside from "../molecules/header/HeaderAside";
 import HbgMenuList from "../molecules/header/HbgMenuList";
 
 import "./header.css";
+import { Outlet } from "react-router-dom";
 
 const Header = () => {
   const [showModal, setShowModal] = useState(false);
@@ -18,6 +19,7 @@ const Header = () => {
         <HeaderAside />
       </div>
       {showModal === true ? <HbgMenuList setShowModal={setShowModal} /> : ""}
+      <Outlet></Outlet>
     </div>
   );
 };
