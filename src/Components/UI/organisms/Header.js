@@ -19,6 +19,7 @@ const Header = () => {
         <HeaderAside />
       </div>
       {showModal === true ? <HbgMenuList setShowModal={setShowModal} /> : ""}
+
       <Outlet></Outlet>
     </div>
   );

@@ -45,7 +45,7 @@ function App() {
           <Route exact path="main" element={<MainPage />} />
           <Route path="jobposting" element={<JobPosting />} />
         </Route>
-        <Route path="/newsingup" element={<NewSignUpPage />} />
+        <Route path="/newsignup" element={<NewSignUpPage />} />
         <Route path="/signup" element={<SignUpPage />} />
         {/* <Route path="*" element={<NotFound />} /> */}
       </Routes>
