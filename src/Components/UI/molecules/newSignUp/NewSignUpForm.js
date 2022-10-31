@@ -1,6 +1,34 @@
+import { useState } from "react";
+
 import "./newSignUpForm.css";
 
 const NewSignUpForm = () => {
+  const [all, setAll] = useState("");
+  const [one, setOne] = useState("");
+  const [two, setTwo] = useState("");
+  const [third, setThird] = useState("");
+
+  function allCheck(event) {
+    if (event === true) {
+      setOne(true);
+      setTwo(true);
+      setThird(true);
+    } else {
+      setOne(false);
+      setTwo(false);
+      setThird(false);
+    }
+  }
+  function oneCheck(event) {
+    event ? setOne(true) : setOne(false);
+  }
+  function twoCheck(event) {
+    event ? setTwo(true) : setTwo(false);
+  }
+  function thirdCheck(event) {
+    event ? setThird(true) : setThird(false);
+  }
+
   return (
     <div className="new-sign-up-form">
       <form>
@@ -44,25 +72,52 @@ const NewSignUpForm = () => {
         </p>
         <div className="agree-wrap">
           <div className="agree-box">
-            <input id="all-agree" type="checkbox" />
+            <input
+              id="all-agree"
+              type="checkbox"
+              onChange={(e) => {
+                allCheck(e.currentTarget.checked);
+              }}
+            />
             <label htmlFor="all-agree">전체 동의</label>
           </div>
           <hr />
           <div className="agree-box">
-            <input id="all-agree" type="checkbox" />
-            <label htmlFor="all-agree">만 14세 이상힙니다. (필수)</label>
+            <input
+              id="age-agree"
+              type="checkbox"
+              onChange={(e) => {
+                oneCheck(e.currentTarget.checked);
+              }}
+              checked={one ? true : false}
+            />
+            <label htmlFor="age-agree">만 14세 이상힙니다. (필수)</label>
           </div>
           <div className="agree-box">
             <div className="id-agree-box">
-              <input id="all-agree" type="checkbox" />
-              <label htmlFor="all-agree">oneID 이용약관 동의 (필수)</label>
+              <input
+                id="id-agree"
+                type="checkbox"
+                onChange={(e) => {
+                  twoCheck(e.currentTarget.checked);
+                }}
+                checked={two ? true : false}
+              />
+              <label htmlFor="id-agree">oneID 이용약관 동의 (필수)</label>
             </div>
             <span>자세히</span>
           </div>
           <div className="agree-box">
             <div className="info-agree-box">
-              <input id="all-agree" type="checkbox" />
-              <label htmlFor="all-agree">
+              <input
+                id="info-agree"
+                type="checkbox"
+                onChange={(e) => {
+                  thirdCheck(e.currentTarget.checked);
+                }}
+                checked={third ? true : false}
+              />
+              <label htmlFor="info-agree">
                 개인정보 및 수집 이용 동의 (필수)
               </label>
             </div>

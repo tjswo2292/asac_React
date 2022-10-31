@@ -38,6 +38,8 @@
   height: 3.125rem;
   padding: 0 0.75rem;
   font-size: 1rem;
+  border: 1px solid #e1e2e3;
+  border-radius: 0.313rem;
 }
 .new-sign-up-form form .certification-number-box {
   display: grid;
