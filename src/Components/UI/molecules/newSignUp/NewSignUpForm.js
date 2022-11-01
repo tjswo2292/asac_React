@@ -1,32 +1,62 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import "./newSignUpForm.css";
 
 const NewSignUpForm = () => {
-  const [all, setAll] = useState("");
-  const [one, setOne] = useState("");
-  const [two, setTwo] = useState("");
-  const [third, setThird] = useState("");
+  const [all, setAll] = useState(false);
+  const [isCheck, setIsCheck] = useState({
+    first: "",
+    second: "",
+    third: "",
+  });
 
-  function allCheck(event) {
-    if (event === true) {
-      setOne(true);
-      setTwo(true);
-      setThird(true);
+  useEffect(() => {
+    if (
+      isCheck.first === true &&
+      isCheck.second === true &&
+      isCheck.third === true
+    ) {
+      setAll(true);
     } else {
-      setOne(false);
-      setTwo(false);
-      setThird(false);
+      setAll(false);
     }
+    return () => {
+      setAll("");
+    };
+  }, [isCheck]);
+
+  function firstCheckValidate(event) {
+    event
+      ? setIsCheck({
+          ...isCheck,
+          first: true,
+        })
+      : setIsCheck({
+          ...isCheck,
+          first: false,
+        });
   }
-  function oneCheck(event) {
-    event ? setOne(true) : setOne(false);
+  function secondCheckValidate(event) {
+    event
+      ? setIsCheck({
+          ...isCheck,
+          second: true,
+        })
+      : setIsCheck({
+          ...isCheck,
+          second: false,
+        });
   }
-  function twoCheck(event) {
-    event ? setTwo(true) : setTwo(false);
-  }
-  function thirdCheck(event) {
-    event ? setThird(true) : setThird(false);
+  function thirdCheckValidate(event) {
+    event
+      ? setIsCheck({
+          ...isCheck,
+          third: true,
+        })
+      : setIsCheck({
+          ...isCheck,
+          third: false,
+        });
   }
 
   return (
@@ -72,13 +102,7 @@ const NewSignUpForm = () => {
         </p>
         <div className="agree-wrap">
           <div className="agree-box">
-            <input
-              id="all-agree"
-              type="checkbox"
-              onChange={(e) => {
-                allCheck(e.currentTarget.checked);
-              }}
-            />
+            <input id="all-agree" type="checkbox" checked={all} />
             <label htmlFor="all-agree">전체 동의</label>
           </div>
           <hr />
@@ -87,9 +111,9 @@ const NewSignUpForm = () => {
               id="age-agree"
               type="checkbox"
               onChange={(e) => {
-                oneCheck(e.currentTarget.checked);
+                firstCheckValidate(e.currentTarget.checked);
               }}
-              checked={one ? true : false}
+              checked={isCheck.first}
             />
             <label htmlFor="age-agree">만 14세 이상힙니다. (필수)</label>
           </div>
@@ -99,9 +123,9 @@ const NewSignUpForm = () => {
                 id="id-agree"
                 type="checkbox"
                 onChange={(e) => {
-                  twoCheck(e.currentTarget.checked);
+                  secondCheckValidate(e.currentTarget.checked);
                 }}
-                checked={two ? true : false}
+                checked={isCheck.second}
               />
               <label htmlFor="id-agree">oneID 이용약관 동의 (필수)</label>
             </div>
@@ -113,9 +137,9 @@ const NewSignUpForm = () => {
                 id="info-agree"
                 type="checkbox"
                 onChange={(e) => {
-                  thirdCheck(e.currentTarget.checked);
+                  thirdCheckValidate(e.currentTarget.checked);
                 }}
-                checked={third ? true : false}
+                checked={isCheck.third}
               />
               <label htmlFor="info-agree">
                 개인정보 및 수집 이용 동의 (필수)
