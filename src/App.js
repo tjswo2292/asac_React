@@ -42,11 +42,12 @@ function App() {
       <GlobalStyle />
       <Routes>
         <Route path="/" element={<Header />}>
-          <Route exact path="main" element={<MainPage />} />
+          <Route path="" element={<MainPage />} />
           <Route path="jobposting" element={<JobPosting />} />
         </Route>
         <Route path="/newsignup" element={<NewSignUpPage />} />
         <Route path="/signup" element={<SignUpPage />} />
+        <Route path="/newsignup" element={<NewSignUpPage />} />
         {/* <Route path="*" element={<NotFound />} /> */}
       </Routes>
     </div>
