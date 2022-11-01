@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useState } from "react";
 import "./signUpForm.css";
 
@@ -46,15 +47,17 @@ const SignUpForm = () => {
         <span className={validate ? "close-warning" : "show-warning"}>
           올바른 이메일을 입력해주세요
         </span>
-        <div className="sign-up-btn-box">
-          <button
-            id={activeBtn ? "loginPosible" : "emailSubmitBtn"}
-            type="submit"
-            disabled={!activeBtn}
-          >
-            <span>이메일로 계속하기</span>
-          </button>
-        </div>
+        <Link to="/newsignup">
+          <div className="sign-up-btn-box">
+            <button
+              id={activeBtn ? "loginPosible" : "emailSubmitBtn"}
+              type="submit"
+              disabled={!activeBtn}
+            >
+              <span>이메일로 계속하기</span>
+            </button>
+          </div>
+        </Link>
       </form>
       <ul className="social-list">
         <li>
