@@ -1,15 +1,15 @@
-import { useEffect } from "react";
 import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 
 import "./mainImgBtn.css";
 
-const MainImgBtn = ({ nextBtn, prevBtn }) => {
+const MainImgBtn = () => {
+
   return (
     <>
-      <button type="click" className="img-btn-left" onClick={prevBtn}>
+      <button type="click" className="img-btn-left" >
         <AiOutlineLeft />
       </button>
-      <button type="click" className="img-btn-rigth" onClick={nextBtn}>
+      <button type="click" className="img-btn-rigth" >
         <AiOutlineRight />
       </button>
     </>
