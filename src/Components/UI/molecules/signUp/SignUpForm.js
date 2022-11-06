@@ -1,29 +1,29 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./signUpForm.css";
 
 const SignUpForm = () => {
+	const [emailInputValue, setEmailInptValue] = useState("");
 	const [validate, setValidate] = useState(true);
 	const [activeBtn, setActiveBtn] = useState(false);
 
-	let regExp =
+	const regExp =
 		/^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{1,3}$/i;
 
-	function showWarningtext(e) {
-		let emailValue = e.target.value;
-
-		if (emailValue == "") {
-			setValidate(true);
-		} else {
+	useEffect(() => {
+		if (regExp.test(emailInputValue) === false) {
 			setValidate(false);
-			if (regExp.test(emailValue)) {
-				setActiveBtn(true);
-				setValidate(true);
-			} else {
-				setActiveBtn(false);
-			}
+			setActiveBtn(false);
+		} else {
+			setValidate(true);
+			setActiveBtn(true);
 		}
+	}, [emailInputValue]);
+
+	function emailValueUpdate(e) {
+		setEmailInptValue(e.target.value);
 	}
+
 	return (
 		<div className="sign-up-form">
 			<div className="sign-up-title">
@@ -39,14 +39,16 @@ const SignUpForm = () => {
 				<label htmlFor="emailInput">이메일</label>
 				<input
 					className={validate ? "" : "red-outline"}
-					onChange={showWarningtext}
+					onChange={emailValueUpdate}
 					id="emailInput"
 					type="email"
 					placeholder="이메일을 입력해주세요."
 				/>
-				<span className={validate ? "close-warning" : "show-warning"}>
-					올바른 이메일을 입력해주세요
-				</span>
+				{validate ? (
+					""
+				) : (
+					<span className="show-warning">올바른 이메일을 입력해주세요</span>
+				)}
 				<Link to="/newsignup">
 					<div className="sign-up-btn-box">
 						<button
